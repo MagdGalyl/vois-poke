@@ -29,12 +29,11 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchPokes } from "../actions";
 import { useDispatch } from "react-redux";
-
-import PokeCard from "./PokeCard";
-
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+
+import PokeCard from "./PokeCard";
+import { addFav, rmvFav } from "../actions";
 
 function PokeList(props) {
   const dispatch = useDispatch();
@@ -43,14 +42,27 @@ function PokeList(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const handleAddFav = (poke) => {
+    props.addFav(poke);
+  };
+
   const renderList = () => {
-    return props.pokes.map(({ id, base, name, img }) => {
+    return props.pokes.map((poke) => {
+      const { id, base, name, img } = poke;
       const { Attack: atk, Defense: def } = base;
       const pName = name.english;
       return (
         <div key={id}>
           <Col>
-            <PokeCard id={id} name={pName} atk={atk} def={def} imgSrc={img} />
+            <PokeCard
+              id={id}
+              name={pName}
+              atk={atk}
+              def={def}
+              imgSrc={img}
+              addFav={handleAddFav}
+              poke={poke}
+            />
           </Col>
         </div>
       );
@@ -58,16 +70,18 @@ function PokeList(props) {
   };
 
   return (
-    <Container>
-      <Row className="row-cols-sm-2 row-cols-md-3 g-3">{renderList()}</Row>
-    </Container>
+    <Row className="row-cols-sm-2 row-cols-md-3 g-3">
+      {renderList()}
+      {/* PlaceHolder */}
+    </Row>
   );
 }
 
 const mapStateToProps = (state) => {
-  return { pokes: state.pokes };
+  console.log(state.fav);
+  return { pokes: state.pokes, fav: state.fav };
 };
 
-const mapDispatchToProps = { fetchPokes };
+const mapDispatchToProps = { fetchPokes, addFav, rmvFav };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PokeList);
