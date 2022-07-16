@@ -11,6 +11,7 @@ export const FavList = (props) => {
 
   return (
     <div>
+      <h1 className="mb-4">Favorites</h1>
       FavList
       {/* 0 */}
     </div>
