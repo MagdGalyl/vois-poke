@@ -9,6 +9,9 @@ export default (state = initialState, { type, payload }) => {
     case "RMV_FAV":
       return state.filter((st) => st.id !== payload);
 
+    case "RMV_ALL_FAV":
+      return [];
+
     default:
       return state;
   }

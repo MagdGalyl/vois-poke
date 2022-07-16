@@ -5,11 +5,10 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
 import FavPokeCard from "./FavPokeCard";
-import { rmvFav } from "../actions";
+import { rmvFav, rmvAllFav } from "../actions";
 
 export const FavList = (props) => {
   const handleRmvFav = (id) => {
-    console.log(id, "from handle");
     props.rmvFav(id);
   };
 
@@ -38,7 +37,14 @@ export const FavList = (props) => {
       <Row>{renderFavList()}</Row>
       <Row>
         <Col className="d-flex justify-content-center">
-          <Button variant="outline-danger ">Remove All</Button>{" "}
+          <Button
+            variant="outline-danger "
+            onClick={() => {
+              props.rmvAllFav()
+            }}
+          >
+            Remove All
+          </Button>
         </Col>
       </Row>
     </div>
@@ -49,6 +55,6 @@ const mapStateToProps = (state) => {
   return { fav: state.fav };
 };
 
-const mapDispatchToProps = { rmvFav };
+const mapDispatchToProps = { rmvFav, rmvAllFav };
 
 export default connect(mapStateToProps, mapDispatchToProps)(FavList);
