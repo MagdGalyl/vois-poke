@@ -1,30 +1,3 @@
-// import React, { Component } from "react";
-// import { connect } from "react-redux";
-// import { fetchPokes } from "../actions";
-
-// class PokeList extends Component {
-//   componentDidMount() {
-//     this.props.fetchPokes();
-//   }
-
-//   renderList() {
-//     return <div>lol</div>;
-//   }
-
-//   render() {
-//     return <div className="ui relaxed divided list">{this.renderList()}</div>;
-//   }
-// }
-
-// const mapStateToProps = (state) => {
-//   console.log(state.pokes);
-//   return { pokes: state.pokes };
-// };
-
-// const mapDispatchToProps = { fetchPokes };
-
-// export default connect(mapStateToProps, mapDispatchToProps)(PokeList);
-
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchPokes } from "../actions";

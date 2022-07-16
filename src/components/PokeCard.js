@@ -4,8 +4,23 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 export const PokeCard = (props) => {
+  // eslint-disable-next-line no-unused-vars
+  const { name, atk, def, imgSrc, addFav, poke, isFav } = props;
+  const disBtn = isFav ? (
+    <Button
+      className="mega-btn"
+      variant="primary"
+      onClick={() => addFav(poke)}
+      disabled
+    >
+      ADD TO FAVORITES
+    </Button>
+  ) : (
+    <Button className="mega-btn" variant="primary" onClick={() => addFav(poke)}>
+      ADD TO FAVORITES
+    </Button>
+  );
 
-  const { name, atk, def, imgSrc, addFav, poke } = props;
   return (
     <Card className="shadow-sm">
       {/* <Card.Img
@@ -25,13 +40,7 @@ export const PokeCard = (props) => {
           </Button>
         </div>
 
-        <Button
-          className="mega-btn"
-          variant="primary"
-          onClick={() => addFav(poke)}
-        >
-          ADD TO FAVORITES
-        </Button>
+        {disBtn}
       </Card.Body>
     </Card>
   );
