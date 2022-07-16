@@ -2,6 +2,7 @@ import pokeApi from "../apis/pokeApi";
 const FETCH_POKE = "FETCH_POKE";
 const ADD_FAV = "ADD_FAV";
 const RMV_FAV = "RMV_FAV";
+const RMV_ALL_FAV = "RMV_ALL_FAV";
 
 export const fetchPokes = () => {
   return async (dispatch) => {
@@ -27,9 +28,15 @@ export const addFav = (poke) => {
   };
 };
 
-export const rmvFav = (poke) => {
+export const rmvFav = (id) => {
   return {
     type: RMV_FAV,
-    payload: poke.id,
+    payload: id,
+  };
+};
+
+export const rmvAllFav = () => {
+  return {
+    type: RMV_ALL_FAV,
   };
 };

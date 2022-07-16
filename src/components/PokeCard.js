@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 export const PokeCard = (props) => {
-  // console.log(props);
+
   const { name, atk, def, imgSrc, addFav, poke } = props;
   return (
     <Card className="shadow-sm">

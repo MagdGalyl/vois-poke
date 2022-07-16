@@ -33,7 +33,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 import PokeCard from "./PokeCard";
-import { addFav, rmvFav } from "../actions";
+import { addFav } from "../actions";
 
 function PokeList(props) {
   const dispatch = useDispatch();
@@ -81,10 +81,9 @@ function PokeList(props) {
 }
 
 const mapStateToProps = (state) => {
-  // console.log(state.fav);
   return { pokes: state.pokes, fav: state.fav };
 };
 
-const mapDispatchToProps = { fetchPokes, addFav, rmvFav };
+const mapDispatchToProps = { fetchPokes, addFav };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PokeList);

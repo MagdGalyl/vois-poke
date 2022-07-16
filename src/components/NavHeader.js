@@ -14,6 +14,7 @@ function NavHeader() {
         </Link>
         <Link to="/fav">
           <i className="bi bi-star-fill text-warning"></i>
+          <i className="bi bi-star text-warning"></i>
           <span className="number text-warning">8</span>
         </Link>
       </Container>
