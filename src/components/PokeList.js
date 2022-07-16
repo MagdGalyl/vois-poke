@@ -70,15 +70,18 @@ function PokeList(props) {
   };
 
   return (
-    <Row className="row-cols-sm-2 row-cols-md-3 g-3">
-      {renderList()}
-      {/* PlaceHolder */}
-    </Row>
+    <div>
+      <h1 className="mb-4">List of Pokemons</h1>
+      <Row className="row-cols-sm-2 row-cols-md-3 g-3">
+        {renderList()}
+        {/* PlaceHolder */}
+      </Row>
+    </div>
   );
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.fav);
+  // console.log(state.fav);
   return { pokes: state.pokes, fav: state.fav };
 };
 
