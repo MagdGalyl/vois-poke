@@ -4,6 +4,7 @@ const initialState = false;
 export default (state = initialState, { type, payload }) => {
   switch (type) {
     case "IS_FAV":
+      console.log(state, "hi from reducer");
       return state;
 
     default:
