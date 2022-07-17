@@ -13,13 +13,13 @@ export const PokeCard = (props) => {
 
   const handleCardClick = () => {
     addFav(poke);
-    console.log(props.id);
+    // console.log(props.id);
     let isFavToggle = props.fav.filter((st) => {
-      console.log(st.id === props.id);
+      // console.log(st.id === props.id);
       return st.id === props.id;
     });
     props.isFav(isFavToggle);
-    console.log(props.isFav());
+    // console.log(props.isFav(isFavToggle));
   };
 
   return (
@@ -45,7 +45,7 @@ export const PokeCard = (props) => {
           className="mega-btn"
           variant="primary"
           onClick={handleCardClick}
-          disabled={props.switch ? true : false}
+          // disabled={props.switch ? true : false}
         >
           ADD TO FAVORITES
         </Button>
