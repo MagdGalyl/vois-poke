@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-import { isFav } from "../actions";
+// import { isFav } from "../actions";
 
 export const PokeCard = (props) => {
   // eslint-disable-next-line no-unused-vars
@@ -14,11 +14,11 @@ export const PokeCard = (props) => {
   const handleCardClick = () => {
     addFav(poke);
     // console.log(props.id);
-    let isFavToggle = props.fav.filter((st) => {
-      // console.log(st.id === props.id);
-      return st.id === props.id;
-    });
-    props.isFav(isFavToggle);
+    // let isFavToggle = props.fav.filter((st) => {
+    //   // console.log(st.id === props.id);
+    //   return st.id === props.id;
+    // });
+    // props.isFav(isFavToggle);
     // console.log(props.isFav(isFavToggle));
   };
 
@@ -45,7 +45,7 @@ export const PokeCard = (props) => {
           className="mega-btn"
           variant="primary"
           onClick={handleCardClick}
-          disabled={props.switch ? true : false}
+          // disabled={props.switch ? true : false}
         >
           ADD TO FAVORITES
         </Button>
@@ -59,9 +59,11 @@ const mapStateToProps = (state) => {
   return { fav: state.fav, switch: state.switch };
 };
 
-const mapDispatchToProps = { isFav };
+// const mapDispatchToProps = { isFav };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PokeCard);
+// export default connect(mapStateToProps, mapDispatchToProps)(PokeCard);
+
+export default connect(mapStateToProps)(PokeCard);
 
 // import React from "react";
 

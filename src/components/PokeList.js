@@ -17,7 +17,8 @@ function PokeList(props) {
   }, []);
 
   const handleAddFav = (poke) => {
-    props.addFav(poke);
+    let poke2 = { ...poke, tglFav: false };
+    props.addFav(poke2);
   };
 
   const renderList = () => {
@@ -52,6 +53,7 @@ function PokeList(props) {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state.fav);
   return { pokes: state.pokes, fav: state.fav };
 };
 
