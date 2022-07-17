@@ -7,7 +7,7 @@ import Navbar from "react-bootstrap/Navbar";
 // import Nav from "react-bootstrap/Nav";
 
 function NavHeader(props) {
-  const favIcnz =
+  const favIcon =
     props.fav.length === 0 ? (
       <i className="bi bi-star text-warning"></i>
     ) : (
@@ -23,7 +23,7 @@ function NavHeader(props) {
         <Link to="/">
           <Navbar.Brand>Pokemon</Navbar.Brand>
         </Link>
-        <Link to="/fav">{favIcnz}</Link>
+        <Link to="/fav">{favIcon}</Link>
       </Container>
     </Navbar>
   );

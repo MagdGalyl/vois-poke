@@ -3,6 +3,7 @@ const FETCH_POKE = "FETCH_POKE";
 const ADD_FAV = "ADD_FAV";
 const RMV_FAV = "RMV_FAV";
 const RMV_ALL_FAV = "RMV_ALL_FAV";
+const IS_FAV = "IS_FAV";
 
 export const fetchPokes = () => {
   return async (dispatch) => {
@@ -13,13 +14,6 @@ export const fetchPokes = () => {
     });
   };
 };
-
-// export const addFav = (id, name, imgSrc) => {
-//   return {
-//     type: ADD_FAV,
-//     payload: { id, name, imgSrc },
-//   };
-// };
 
 export const addFav = (poke) => {
   return {
@@ -38,5 +32,11 @@ export const rmvFav = (id) => {
 export const rmvAllFav = () => {
   return {
     type: RMV_ALL_FAV,
+  };
+};
+
+export const isFav = () => {
+  return {
+    type: IS_FAV,
   };
 };
