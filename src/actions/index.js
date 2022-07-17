@@ -3,6 +3,7 @@ const FETCH_POKE = "FETCH_POKE";
 const ADD_FAV = "ADD_FAV";
 const RMV_FAV = "RMV_FAV";
 const RMV_ALL_FAV = "RMV_ALL_FAV";
+const TGL_FAV = "TGL_FAV";
 // const IS_FAV = "IS_FAV";
 
 export const fetchPokes = () => {
@@ -40,6 +41,13 @@ export const rmvFav = (id) => {
 export const rmvAllFav = () => {
   return {
     type: RMV_ALL_FAV,
+  };
+};
+
+export const tglFav = (id) => {
+  return {
+    type: TGL_FAV,
+    payload: id,
   };
 };
 

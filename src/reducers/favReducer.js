@@ -12,6 +12,11 @@ export default (state = initialState, { type, payload }) => {
     case "RMV_ALL_FAV":
       return [];
 
+    case "TGL_FAV":
+      return state.filter((st) => {
+        return st.id === payload ? true : false;
+      });
+
     default:
       return state;
   }

@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 import PokeCard from "./PokeCard";
-import { fetchPokes, addFav } from "../actions";
+import { fetchPokes, addFav, tglFav } from "../actions";
 
 function PokeList(props) {
   // const [isFav, setIsFav] = useState(false);
@@ -19,6 +19,12 @@ function PokeList(props) {
   const handleAddFav = (poke) => {
     let poke2 = { ...poke, tglFav: false };
     props.addFav(poke2);
+  };
+
+  const handleTglFav = (id) => {
+    // let uFav = { ...poke, tglFav: false };
+
+    props.tglFav(id);
   };
 
   const renderList = () => {
@@ -36,6 +42,7 @@ function PokeList(props) {
               def={def}
               imgSrc={img}
               addFav={handleAddFav}
+              tglFav={handleTglFav}
               poke={poke}
             />
           </Col>
@@ -53,11 +60,10 @@ function PokeList(props) {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.fav);
   return { pokes: state.pokes, fav: state.fav };
 };
 
-const mapDispatchToProps = { fetchPokes, addFav };
+const mapDispatchToProps = { fetchPokes, addFav, tglFav };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PokeList);
 
