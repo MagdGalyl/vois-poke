@@ -45,7 +45,7 @@ export const PokeCard = (props) => {
           className="mega-btn"
           variant="primary"
           onClick={handleCardClick}
-          // disabled={props.switch ? true : false}
+          disabled={props.switch ? true : false}
         >
           ADD TO FAVORITES
         </Button>
