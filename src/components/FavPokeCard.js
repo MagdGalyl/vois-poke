@@ -14,3 +14,4 @@ function FavPokeCard({ id, name, imgSrc, rmvFav }) {
 }
 
 export default FavPokeCard;
+ 
